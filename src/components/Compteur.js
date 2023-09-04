@@ -1,35 +1,28 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class Compteur extends Component {
-    constructor(){
-        super();
-        this.state = {
-            compteur: 0,
-        };
+        function Compteur() {
+            const [compteur, setCompteur] = useState(0);
+
+    
+
+            const increment = () =>{
+                setCompteur(compteur + 1);
     }
 
-    increment = () =>{
-        this.setState({
-            compteur: this.state.compteur + 1,
-        })
+    const decrement = () =>{
+        setCompteur(compteur - 1);
     }
 
-    decrement = () =>{
-        this.setState({
-            compteur: this.state.compteur - 1,
-        })
-    }
-
-    render(){
+    
         return(
             <div>
-                <p>{this.state.compteur}</p>
-                <button onClick={this.increment}>+</button>
-                <button onClick={this.decrement}>-</button>
+                <h3>{compteur}</h3>
+                <button onClick={increment}>+</button>
+                <button onClick={decrement}>-</button>
 
             </div>
         )
-    }
+    
 
 }
 
